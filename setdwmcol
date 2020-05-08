@@ -1,0 +1,27 @@
+#!/bin/sh
+
+dwm='.tools/dwm'
+
+backgound=$(./chwall $1)
+
+
+field=$(grep "$backgound" "$1"/myprimarycolours.txt)
+
+colours="$(echo $field |  awk 'BEGIN {FS ="#"};{print $2 " " $3 " " $4 " " $5 " " $6}' | xargs $PWD/rgb2hsl | sort -rn | awk '{print $2}' | tr  '\n' ' ')'\n'"
+
+colour1=$( echo $colours | awk '{print $1}' )
+colour2=$( echo $colours | awk '{print $2}' )
+colour3=$( echo $colours | awk '{print $3}' )
+colour4=$( echo $colours | awk '{print $4}' )
+colour5=$( echo $colours | awk '{print $5}' )
+
+
+sed -i "s/col_gray1\[\].*/col_gray1\[\]       = \"#$colour1\";/" "$dwm/config.h"
+sed -i "s/col_gray2\[\].*/col_gray2\[\]       = \"#$colour2\";/" "$dwm/config.h"
+sed -i "s/col_gray3\[\].*/col_gray3\[\]       = \"#$colour3\";/" "$dwm/config.h"
+sed -i "s/col_gray4\[\].*/col_gray4\[\]       = \"#$colour4\";/" "$dwm/config.h"
+sed -i "s/col_cyan\[\].*/col_cyan\[\]        = \"#$colour5\";/" "$dwm/config.h"
+
+cd $dwm &&
+make &&
+killall dwm
