@@ -1,10 +1,10 @@
 # dwm-primcol
 A set of scripts that extract primary colours from a wallpaper and uses them as border/statusbar colours
 
-![Screenshot](https://github.com/BogdanTheGeek/dwm-primcol/tree/master/screeshots/1.png "Screenshot 1")
-![Screenshot](https://github.com/BogdanTheGeek/dwm-primcol/tree/master/screeshots/2.png "Screenshot 2")
-![Screenshot](https://github.com/BogdanTheGeek/dwm-primcol/tree/master/screeshots/3.png "Screenshot 3")
-![Screenshot](https://github.com/BogdanTheGeek/dwm-primcol/tree/master/screeshots/4.png "Screenshot 4")
+![Screenshot](https://github.com/BogdanTheGeek/dwm-primcol/blob/master/screenshots/1.png "Screenshot 1")
+![Screenshot](https://github.com/BogdanTheGeek/dwm-primcol/blob/master/screenshots/2.png "Screenshot 2")
+![Screenshot](https://github.com/BogdanTheGeek/dwm-primcol/blob/master/screenshots/3.png "Screenshot 3")
+![Screenshot](https://github.com/BogdanTheGeek/dwm-primcol/blob/master/screenshots/4.png "Screenshot 4")
 
 
 ## Dependencies/Requirements
