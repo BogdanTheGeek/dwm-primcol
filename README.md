@@ -26,7 +26,7 @@ Make sure all the files without an extension have execution rights(`chmod +x ...
 2. Run `./extprimcol` to extract the 5 most dominant colours in all of your wallpapers and store those files in myprimarycolours.txt
 3. Edit setdwmcol and change the dwm variable to the location of your dwm source code (make a backup just in case).
 4. (OPTIONAL) Compile `rgb2hsl.c` if you have to, idk.(`gcc rgb2hsl.c -o rgb2hsl`)
-5. Run ./setdwmcol and hope for the best
+5. Run `./setdwmcol` and hope for the best
 
 You can now launch setdwmcol from a keyboard shortcut.
 
