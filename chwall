@@ -1,0 +1,13 @@
+#!/bin/sh
+
+image="$(find  ~/Pictures/Wallpapers -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -type f | shuf -n 1 )"
+ 
+case $DESKTOP_SESSION in
+	#gnome
+	gnome*) gsettings set org.gnome.desktop.background picture-uri file://$image;; 
+	#normal xorg
+	*) xwallpaper --zoom "$image" ;;
+esac
+
+echo $image
+notify-send $(echo $image | sed 's/.*\///g')
