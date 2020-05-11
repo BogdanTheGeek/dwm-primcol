@@ -1,5 +1,6 @@
 # dwm-primcol
 A set of scripts that extract primary colours from a wallpaper and uses them as border/statusbar colours
+
 This script also sets a random wallpaper from your wallpaperfolder as the background and aplys the colors to dwm
 
 ![Screenshot](https://github.com/BogdanTheGeek/dwm-primcol/blob/master/screenshots/1.png "Screenshot 1")

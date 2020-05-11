@@ -9,6 +9,7 @@ field=$(grep "$backgound" "$1"/myprimarycolours.txt)
 
 colours="$(echo $field |  awk 'BEGIN {FS ="#"};{print $2 " " $3 " " $4 " " $5 " " $6}' | xargs $PWD/rgb2hsl | sort -rn | awk '{print $2}' | tr  '\n' ' ')'\n'"
 
+
 colour1=$( echo $colours | awk '{print $1}' )
 colour2=$( echo $colours | awk '{print $2}' )
 colour3=$( echo $colours | awk '{print $3}' )

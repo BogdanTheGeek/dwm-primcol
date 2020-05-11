@@ -12,7 +12,6 @@ case $DESKTOP_SESSION in
 		else [ $? -eq 1 ]
 			xwallpaper --zoom "$image"
 		fi;;
-esac
 
 echo $image
 notify-send $(echo $image | sed 's/.*\///g')

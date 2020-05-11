@@ -15,4 +15,5 @@ while read -r  line ; do
 	fi
 done 
 
-rm temp.png
+rm temp.png	 
+
