@@ -1,13 +1,14 @@
 #!/bin/sh
 
-dwm='~/.tools/dwm'
+dwm='.tools/dwm'
 
-backgound=$(chwall)
+backgound=$(./chwall $1)
 
 
-field=$(grep "$backgound" ~/Pictures/Wallpapers/myprimarycolours.txt)
+field=$(grep "$backgound" "$1"/myprimarycolours.txt)
 
-colours="$(echo $field |  awk 'BEGIN {FS ="#"};{print $2 " " $3 " " $4 " " $5 " " $6}' | xargs rgb2hsl | sort -rn | awk '{print $2}' | tr  '\n' ' ')'\n'"
+colours="$(echo $field |  awk 'BEGIN {FS ="#"};{print $2 " " $3 " " $4 " " $5 " " $6}' | xargs $PWD/rgb2hsl | sort -rn | awk '{print $2}' | tr  '\n' ' ')'\n'"
+
 
 colour1=$( echo $colours | awk '{print $1}' )
 colour2=$( echo $colours | awk '{print $2}' )
@@ -23,6 +24,5 @@ sed -i "s/col_gray4\[\].*/col_gray4\[\]       = \"#$colour4\";/" "$dwm/config.h"
 sed -i "s/col_cyan\[\].*/col_cyan\[\]        = \"#$colour5\";/" "$dwm/config.h"
 
 cd $dwm &&
-make && 
+make &&
 killall dwm
-

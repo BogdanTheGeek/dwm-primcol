@@ -1,12 +1,17 @@
 #!/bin/sh
 
-image="$(find  ~/Pictures/Wallpapers -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -type f | shuf -n 1 )"
+image="$(find  $1 -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -type f | shuf -n 1 )"
  
 case $DESKTOP_SESSION in
 	#gnome
 	gnome*) gsettings set org.gnome.desktop.background picture-uri file://$image;; 
 	#normal xorg
-	*) xwallpaper --zoom "$image" ;;
+	*) ls /usr/bin/ | grep feh
+		if [ $? -eq  0 ]; then
+			feh --bg-fill "$image"
+		else [ $? -eq 1 ]
+			xwallpaper --zoom "$image"
+		fi;;
 esac
 
 echo $image
